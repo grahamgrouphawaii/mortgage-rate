@@ -36,12 +36,7 @@ def main():
             print(f"{f.__name__} failed: {e}", file=sys.stderr)
     if not data or not (2 < data["rate30"] < 20):
         sys.exit("No usable rate found; leaving rate.json unchanged.")
-    try:
-        old = json.load(open("rate.json"))
-        if old.get("week") == data["week"] and old.get("rate30") == data["rate30"]:
-            print("No new week yet."); return
-    except FileNotFoundError:
-        pass
+    # always stamp the check time, so the repo stays active and GitHub keeps the schedule running
     data["fetched"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
     json.dump(data, open("rate.json", "w"), indent=2); open("rate.json", "a").write("\n")
     print("Updated:", data)
