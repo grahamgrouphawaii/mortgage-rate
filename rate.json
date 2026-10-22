@@ -1,8 +1,8 @@
 {
-  "rate30": 7.4,
-  "rate15": 6.71,
-  "week": "2026-10-15",
+  "rate30": 7.32,
+  "rate15": 6.68,
+  "week": "2026-10-22",
   "source": "Freddie Mac Primary Mortgage Market Survey",
   "url": "https://www.freddiemac.com/pmms",
-  "fetched": "2026-10-21T05:26Z"
+  "fetched": "2026-10-22T22:37Z"
 }
